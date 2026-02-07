@@ -19,6 +19,37 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* 容器样式：居中显示，限定宽度 */
+        .image-container {
+            width: 500px;
+            margin: 20px auto;
+            /* 上下20px间距，左右自动居中 */
+            border: 1px solid #eee;
+            /* 浅灰色边框 */
+            padding: 10px;
+        }
+
+        /* 图片样式：宽度自适应容器，避免变形 */
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* 消除图片底部默认空隙 */
+        }
+
+        /* 标注样式：居中、浅背景、内边距 */
+        .image-caption {
+            text-align: center;
+            /* 文字居中 */
+            padding: 8px 0;
+            background-color: #f5f5f5;
+            /* 浅灰色背景 */
+            color: #333;
+            /* 深灰色文字 */
+            font-size: 14px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -55,121 +86,181 @@
             <div class="col-md-3 hidden-xs hidden-sm">
                 <div id="sidebar-nav" class="list-group"
                     style="position: fixed; width: 260px; top: 100px; z-index: 100;">
-                    <a href="#1" class="list-group-item active">基于EEG信号多重分形特性和分层模糊熵的脑卒中原因判断</a>
-                    <a href="#2" class="list-group-item">基于分形与标度特征和熵特征的脑卒中类别判断</a>
-                    <a href="#3" class="list-group-item">融合多尺度脑电频域和微状态特征的脑卒中意识障碍分类识别</a>
-                    <a href="#4" class="list-group-item">融合了EEG的时域和频域信息的脑卒中类型识别</a>
-                    <a href="#5" class="list-group-item">面向非平衡数据集的深度极限学习机模型</a>
-                    <a href="#6" class="list-group-item">W-Net：一种边界增强型卒中病变分割网络</a>
-                    <a href="#7" class="list-group-item">基于改进注意力机制和上下文特征融合的脑卒中病灶分割扩散模型</a>
+                    <a href="#0" class="list-group-item active">基于轮廓系数的多智能体强化学习聚类算法</a>
+                    <a href="#1" class="list-group-item active">融合了EEG的时域和频域信息的脑卒中类型识别</a>
+                    <a href="#2" class="list-group-item">融合多尺度脑电频域和微状态特征的脑卒中意识障碍分类识别</a>
+
+                    <a href="#3" class="list-group-item">针对不平衡数据集的增强多层极限学习机：优化的成本调节与分层参数自适应</a>
+                    <a href="#4" class="list-group-item">W-Net：一种边界增强型卒中病变分割网络</a>
+                    <a href="#5" class="list-group-item">基于改进注意力机制和上下文特征融合的脑卒中病灶分割扩散模型</a>
                 </div>
             </div>
 
             <div class="col-md-9 col-md-offset-3">
 
-
-                <div id="1" class="section-block" style="padding-top: 60px;">
-                    <h3>基于EEG信号多重分形特性和分层模糊熵的脑卒中原因判断</h3>
+                <div id="0" class="section-block" style="padding-top: 60px;">
+                    <h3>基于轮廓系数的多智能体强化学习聚类算法</h3>
+                    <h4><a
+                            href="https://doi.org/10.1016/j.neucom.2024.127901">https://doi.org/10.1016/j.neucom.2024.127901</a>
+                    </h4>
                     <div class="well">
-                        <p>针对EEG信号丰富的非线性动力学特征和非平稳特性，我们该如何利用非线性动力学方法对EEG数据提取合适的特征。</p>
-                        <p>多角度特征的融合能够更充分提取EEG信号的隐含特征但多维特征融合的同时往往会伴随大量混淆信息特征，严重影响预测模型的分类性能。</p>
-                        <p>
-                            1.提出了一种基于优化经验模态分解的多重分形去趋势波动分析算法（MF-DFAemd），用以提取脑卒中EEG信号的多重分形特性（自相关性特征）。<br>
-                            2.根据脑卒中患者左右脑EEG的非对称特点，并基于分层模糊熵，提出了EEG信号对称导联间各频段信号的不对称熵特征和不对称熵指数。最后，融合分层模糊熵、不对称熵特征与不对称熵指数得到复杂性融合特征。<br>
-                            3.将步骤1提取的自相关性特征与步骤2提取的复杂性融合特征相结合得到实验所需的多维融合特征，并在后续用MRMR方法对多维融合特征进行选择，去除其中冗余信息。利用多维融合特征数据构建随机森林实现脑卒中分类。
+                        <p>在人工智能的快速发展中，多智能体强化学习（Multi-agent reinforcement learning ,MARL）作为一种新兴算法，在协作环境中展现出强大的性能。
+                            然而，多智能体系统面临的主要挑战之一是非平稳性问题，这导致收敛性差，严重影响了系统的性能。随着社会对数据处理和分析需求的增加，如何有效解决这一问题，并将其运用于数据聚类领域成为了研究的热点。
                         </p>
-                        <img src="/assets/paper/lxr1.png" alt="" class="img-responsive">
-                        <img src="/assets/paper/lxr2.png" alt="" class="img-responsive">
-                        <p>结果/总结：基于脑卒中复杂系统 EEG信号具备自相关性与复杂性的特点，通过实验证明了自相关性与复杂性融合特征相结合的脑卒中分类识别高效性。</p>
-                        <img src="/assets/paper/lxr3.png" alt="" class="img-responsive">
+                        <img src="/assets/paper/dp1.png" alt="" class="img-responsive">
+                        <p class="image-caption">图1. 多智能体强化学习聚类任务的马尔科夫决策过程</p>
+                        <p>针对这一难题，团队提出了一种基于轮廓系数（Silhouette Coefficient）的多智能体强化学习聚类算法（Multi-agent
+                            reinforcement learning clustering algorithm based on silhouette coefficient ,SC-MARLC）。
+                            该算法通过建立了多智能体与样本之间的映射关系，为每一个样本点分配一个智能体，并基于样本轮廓系数提出了良好类簇子集结构，该结构能帮助智能体寻找最佳的数据聚类结果，显著的克服非平稳性问题。最后，提出了智能体的动作修正策略，以加速算法收敛速度，降低算法时间复杂度。
+                        </p>
+                        <img src="/assets/paper/dp2.png" alt="" class="img-responsive">
+                        <p class="image-caption">图2. 基于轮廓系数的多智能体强化学习聚类算法伪代码</p>
+                        <img src="/assets/paper/dp3.png" alt="" class="img-responsive">
+                        <p class="image-caption">图3. SC-MARLC算法在iris数据集上的收敛性曲线</p>
+                        <img src="/assets/paper/dp4.jpg" alt="" class="img-responsive">
+                        <p class="image-caption">图4. 良好类簇子集结构与智能体动作修正操作的消融实验</p>
+                        <p>消融实验结果表明，良好类簇子集结构能够有效避免多智能体系统的非平稳性问题，智能体动作修正策略可加速SC-MARLC算法收敛速度，降低算法运行时间。</p>
+                        <p class="image-caption">表1：SC-MARLC算法与基准算法在纯度指标上的比较</p>
+                        <img src="/assets/paper/dp5.png" alt="" class="img-responsive">
+                        <p>论文研究对比了SC-MARLC与11种现有聚类算法在15个公共数据集上的性能，结果显示所提出的算法在10个数据集上表现最佳。本研究的创新点在于将轮廓系数引入多智能体强化学习聚类中，有效地解决了多智能体系统中的非平稳性问题，提高了算法的收敛性和性能。
+                            这一成果不仅推动了强化学习在聚类分析中的应用，也为解决复杂环境下的决策问题提供了新的思路和方法。此外，该算法的高性能表现预示着其在实际应用中的巨大潜力，特别是在需要高效数据处理和分析领域。目前课题组已将该方法用于新能源电池材料安全性评估预测系统，并申请国内发明专利一项。
+                        </p>
                     </div>
                 </div>
 
                 <hr>
 
-                <div id="2" class="section-block" style="padding-top: 60px;">
-                    <h3>基于分形与标度特征和熵特征的脑卒中类别判断</h3>
-                    <div class="well">
-                        <p>鉴于 EEG 信号的非平稳和混沌特性，本研究提取非线性动力学特征。具体包括两个互补的方面：一是通过分层模糊熵量化的复杂性，二是通过多重分形量化的自相似性。</p>
-                        <p>尽管传统 MF-DFA 是分析非线性标度行为的有力工具，但其固定的多项式去趋势方法可能在处理复杂的非平稳 EEG 信号时引入伪迹。而且绝对熵值受个体差异参考大，难以进行横向比较。</p>
-                        <p>研究提出了基于MF-DFAemd改进的MF-DFAI算法来分析并提取EEG信号的多重分形特征。在提取熵特征时，不仅提取了分层模糊熵，还提取了模糊不对称指数以及其他若干种不对称熵来量化大脑左右半球之间动力学复杂性的差异程度。
-                        </p>
-                        <img src="/assets/paper/wt1.png" alt="" class="img-responsive">
-                        <p>结果/总结：使用MF-DFAI提取的多重分形特性，不对称熵，分层模糊熵以及模糊不对称指数作为输入特征即下图的Multi-dimensional feature，取得的效果最好。</p>
-                        <img src="/assets/paper/wt2.png" alt="" class="img-responsive">
-                    </div>
-                </div>
 
-                <hr>
 
-                <div id="3" class="section-block" style="padding-top: 60px; min-height: 500px;">
-                    <h3>融合多尺度脑电频域和微状态特征的脑卒中意识障碍分类识别</h3>
-                    <div class="well">
-                        <p>临床诊断中，快速准确区分缺血性与出血性脑卒中是制定治疗方案的关键前提。通过多层次融合离散小波变化（DWT）提取的在不同尺度下的时频分布特征和经验模态分解(EMD)提取的自适应时域成分特征，该模型显著提升了脑卒中的分类性能。
-                        </p>
-                        <p>信号噪声干扰、个体差异导致的模型泛化难题未解决、现有方法仍存在特征融合策略单一、层级间信息交互不足等缺陷</p>
-                        <p>由以下时域和频域（由小波变化的性质可知，小波系数可以代表不同频域）波形可以发现两种脑卒中的时域和某些频域信号有差异。因此自然可以想到融合时域和频域信号来研究脑卒中分类问题。</p>
-                        <img src="/assets/paper/wt3.png" alt="" class="img-responsive">
-                        <img src="/assets/paper/wt4.png" alt="" class="img-responsive">
-                        <p>通过构建通道×时间的二维矩阵保留EEG信号的空间信息。本研究采用了多维度特征融合策略。首先，利用 DWT 优异的频率定位能力，提取信号在不同尺度下的时频分布特征；随后，引入 EMD
-                            算法对信号进行自适应分解，通过 IMF
-                            分量捕获深层次的自适应时域成分特征。先针对DWT与EMD选择出的两种特征再次进行特征提取，将新得到的两种特征拼接后通过金字塔融合机制进行深度融合与分类(PCCNN)。</p>
-                        <p>着在不同的分类阈值下，该融合方式对正负样本的区分能力最强，相比另外两种单类融合方式，能更有效地将正样本和负样本区分开来。</p>
-                        <img src="/assets/paper/wt5.png" alt="" class="img-responsive">
-                        <img src="/assets/paper/wt6.png" alt="" class="img-responsive">
-                        <img src="/assets/paper/wt7.png" alt="" class="img-responsive">
-                    </div>
-                </div>
 
-                <hr>
 
-                <div id="4" class="section-block" style="padding-top: 60px; min-height: 500px;">
+
+                <div id="1" class="section-block" style="padding-top: 60px; min-height: 500px;">
                     <h3>融合了EEG的时域和频域信息的脑卒中类型识别</h3>
+
+                    <p>
+                    <h4><a
+                            href="https://kns.cnki.net/kcms2/article/abstract?v=dKcr_PZ1zcvfa0rHypvyUkY1ut7702NmXLLJ1Nz8b2nylBxrn39-PR1AWjEQpLrWwkx6nfm6G36pIs_rmKvAWLbPZkCKYJn40p5kh2ZHbax4w4S1KkopTg2QucycAodLsE6ftx5BF5PfACXeTFpgPkGHr6B39EGLRZIiZ-ZMA0c=&uniplatform=NZKPT">DOI:10.27352/d.cnki.gylgu.2024.001618.</a>
+                    </h4>
+                    </p>
+
+                    <p>
+                    <h4><a
+                            href="https://doi.org/10.3389/fnins.2023.1257511">https://doi.org/10.3389/fnins.2023.1257511</a>
+                    </h4>
+                    </p>
+
                     <div class="well">
                         <p>传统静息脑电图在捕捉大脑活动动态变化方面存在不足，且其较低的空间分辨率也限制更多拓扑信息的捕捉。而在多通道整合上进行的脑电图微状态分析，提供了亚秒级的大脑活动的综合信息，同时增加了对脑电图的空间拓扑分布与时域信息的解释能力。
                         </p>
                         <p>以往关于意识障碍的研究通常只利用单变量的特征进行分析识别，而不是采用多特征的和多尺度的信息整合，那么应该融合哪些特征？除了微状态的时间域特征，我们该怎么分析微状态时序的非线性复杂度？是否还需要引入EEG信号的频域分析？
                         </p>
-                        <p>1.本研究从微状态尺度分析EEG信号，研究微状态的时间特征和序列的复杂性特征能够有效地从脑卒中患者中识别出意识障碍。
-                            2.通过计算患者的delta和alpha的功率谱比值DAR补充EEG信号的频域信息。
-                            3.将提取出的特征归一化，然后采用串联特征融合的方法将不同类型的特征按顺序连接成一个长向量，作为分类器的输入特征。</p>
+                        <p>1.本研究从微状态尺度分析EEG信号，研究微状态的时间特征和序列的复杂性特征能够有效地从脑卒中患者中识别出意识障碍。</p>
+                        <p>2.通过计算患者的delta和alpha的功率谱比值DAR补充EEG信号的频域信息。</p>
+                        <p>3.将提取出的特征归一化，然后采用串联特征融合的方法将不同类型的特征按顺序连接成一个长向量，作为分类器的输入特征。</p>
                         <img src="/assets/paper/yf1.png" alt="" class="img-responsive">
+                        <p class="image-caption">图1. 多特征融合的意识障碍分类流程图</p>
                         <p>将微状态时间特征与表示微状态序列复杂性的微状态序列LZC以及脑电频域 DAR 特征进行多尺度特征融合后，可以显著提高脑卒中患者中意识障碍的识别准确率与识别敏感性。且熵率与Hurst
                             指数与LZC可能高度相关，特征之间的冗余会降低SVM分类器的性能，因此单独使用LZC表征微状态序列复杂性可以得到更好的结果。</p>
+                        <p class="image-caption">表1. 脑卒中后意识障碍和清醒患者组的SVM分类结果</p>
                         <img src="/assets/paper/yf2.png" alt="" class="img-responsive">
                     </div>
                 </div>
 
                 <hr>
 
-                <div id="5" class="section-block" style="padding-top: 60px; min-height: 500px;">
-                    <h3>非平衡数据集</h3>
+
+
+
+
+
+                <div id="2" class="section-block" style="padding-top: 60px; min-height: 500px;">
+                    <h3>融合多尺度脑电频域和微状态特征的脑卒中意识障碍分类识别</h3>
+                    <p>
+                    <h4><a
+                            href="https://doi.org/10.1038/s41598-025-04756-0">https://doi.org/10.1038/s41598-025-04756-0</a>
+                    </h4>
+                    </p>
                     <div class="well">
-                        <p>现实数据中常见类别不平衡（少数类样本很少），模型易偏向多数类，导致少数类漏检，在医疗诊断、故障检测等场景风险更大。
+                        <p>临床诊断中，快速准确区分缺血性与出血性脑卒中是制定治疗方案的关键前提。通过多层次融合离散小波变化（DWT）提取的在不同尺度下的时频分布特征和经验模态分解(EMD)提取的自适应时域成分特征，该模型显著提升了脑卒中的分类性能。
                         </p>
-                        <p>在类别极不平衡时，如何避免模型偏向多数类、导致少数类被大量漏检？当少数类样本稀疏且常贴近决策边界时，怎样提升模型对边界少数类的敏感性？
+                        <p>信号噪声干扰、个体差异导致的模型泛化难题未解决、现有方法仍存在特征融合策略单一、层级间信息交互不足等缺陷。</p>
+                        <p>由以下时域和频域（由小波变化的性质可知，小波系数可以代表不同频域）波形可以发现两种脑卒中的时域和某些频域信号有差异。因此自然可以想到融合时域和频域信号来研究脑卒中分类问题。</p>
+                        <img src="/assets/paper/wt3.png" alt="" class="img-responsive">
+                        <p class="image-caption">图1. 出血性脑卒中</p>
+                        <img src="/assets/paper/wt4.png" alt="" class="img-responsive">
+                        <p class="image-caption">图2. 缺血性脑卒中</p>
+                        <p>通过构建通道×时间的二维矩阵保留EEG信号的空间信息。本研究采用了多维度特征融合策略。首先，利用 DWT 优异的频率定位能力，提取信号在不同尺度下的时频分布特征；随后，引入 EMD
+                            算法对信号进行自适应分解，通过 IMF
+                            分量捕获深层次的自适应时域成分特征。先针对DWT与EMD选择出的两种特征再次进行特征提取，将新得到的两种特征拼接后通过金字塔融合机制进行深度融合与分类(PCCNN)。</p>
+                        <p>着在不同的分类阈值下，该融合方式对正负样本的区分能力最强，相比另外两种单类融合方式，能更有效地将正样本和负样本区分开来。</p>
+                        <img src="/assets/paper/wt5.png" alt="" class="img-responsive">
+                        <p class="image-caption">图3. EEG时频特征提取过程</p>
+                        <img src="/assets/paper/wt6.png" alt="" class="img-responsive">
+                        <p class="image-caption">图4. 基于PCCNN的脑卒中分类原理框图</p>
+                        <img src="/assets/paper/wt7.png" alt="" class="img-responsive">
+                        <p class="image-caption">图5.
+                            不同融合特征的性能比较：融合特征-3是MFDFAI自相关特征（Our-0）与模糊近似熵的融合；融合特征-4是小波包能量降维特征与三层分层模糊熵特征的融合；而多维特征（Our-3）则是MFDFAI自相关特征（Our-0）与复杂融合特征（Our-2）的融合。
                         </p>
-                        <p>1.引入 Universum 先验样本以强化边界学习：在特征空间按公式构造 Universum 样本并并入训练，使模型在少数类贴近决策边界的区域获得更稳定、更可分的判别信息。
-                            2.将类别代价权重参数转为可搜索的优化变量：把 CCR-ELM
-                            中影响不平衡分类效果的关键代价权重从“手工/随机设定”转为“可优化目标”，并通过改进的群智能搜索策略自动寻优更合适的参数组合。
-                            3.采用多层 ELM
-                            并对结构复杂度进行自适应选择：在层数（1–5）与隐藏节点数（1–500）的离散范围内，结合性能监控机制动态确定更匹配数据集的结构规模，在性能与训练开销之间取得平衡。</p>
-                        <img src="/assets/paper/wyy1.png" alt="" class="img-responsive">
-                        <p>提出一套面向不平衡分类的整体框架：通过引入参考样本强化决策边界学习，并用启发式优化自动调整类别权重与模型规模，从而减少少数类漏检且保持计算开销可控。
-                            在 28 个公开不平衡数据集上，少数类相关指标整体更好（尤其是 Sensitivity 和 G-mean），并且通过了统计检验，说明提升不是偶然波动。在 Stroke 数据集上，虽然
-                            Accuracy 已较高（92.14%），但更关键的少数类指标提升更明显：Sensitivity 35.81%、G-mean 56.92%（对比 CCR-ELM 的 G-mean
-                            36.27%）。</p>
-                        <img src="/assets/paper/wyy2.png" alt="" class="img-responsive">
                     </div>
                 </div>
 
                 <hr>
 
-                <div id="6" class="section-block" style="padding-top: 60px; min-height: 500px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div id="3" class="section-block" style="padding-top: 60px; min-height: 500px;">
+                    <h3>针对脑卒中分类不平衡数据集的增强多层极限学习机：优化的成本调节与分层参数自适应</h3>
+                    <p>
+                    <h4><a
+                            href="https://doi.org/10.1016/j.ins.2025.122426">https://doi.org/10.1016/j.ins.2025.122426</a>
+                    </h4>
+                    </p>
+                    <div class="well">
+                        <p>现实数据中常见类别不平衡（少数类样本很少），模型易偏向多数类，导致少数类漏检，在医疗诊断、故障检测等场景风险更大。
+                        </p>
+                        <p>在类别极不平衡时，如何避免模型偏向多数类、导致少数类被大量漏检？当少数类样本稀疏且常贴近决策边界时，怎样提升模型对边界少数类的敏感性？
+                        </p>
+                        <p>1.引入 Universum 先验样本以强化边界学习：在特征空间按公式构造 Universum 样本并并入训练，使模型在少数类贴近决策边界的区域获得更稳定、更可分的判别信息。</p>
+                        <p>2.将类别代价权重参数转为可搜索的优化变量：把 CCR-ELM
+                            中影响不平衡分类效果的关键代价权重从“手工/随机设定”转为“可优化目标”，并通过改进的群智能搜索策略自动寻优更合适的参数组合。</p>
+                        <p> 3.采用多层 ELM
+                            并对结构复杂度进行自适应选择：在层数（1–5）与隐藏节点数（1–500）的离散范围内，结合性能监控机制动态确定更匹配数据集的结构规模，在性能与训练开销之间取得平衡。</p>
+
+                        <img src="/assets/paper/wyy1.png" alt="" class="img-responsive">
+                        <p class="image-caption">图1.
+                            UIHMCE的整体流程图（主要分为3个部分：生成要添加到训练数据集中的Universum样本，使用IHHO算法生成CCR-ELM的加权参数，以及构建MELM以优化隐藏层参数。）。
+                        </p>
+                        <p>提出一套面向不平衡分类的整体框架：通过引入参考样本强化决策边界学习，并用启发式优化自动调整类别权重与模型规模，从而减少少数类漏检且保持计算开销可控。
+                            在 28 个公开不平衡数据集上，少数类相关指标整体更好（尤其是 Sensitivity 和 G-mean），并且通过了统计检验，说明提升不是偶然波动。在 Stroke 数据集上，虽然
+                            Accuracy 已较高（92.14%），但更关键的少数类指标提升更明显：Sensitivity 35.81%、G-mean 56.92%（对比 CCR-ELM 的 G-mean
+                            36.27%）。</p>
+                        <img src="/assets/paper/wyy2.png" alt="" class="img-responsive">
+                        <p class="image-caption">图2. 不同UIHMCE策略的G均值（%）性能表现。
+                        </p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id="4" class="section-block" style="padding-top: 60px; min-height: 500px;">
                     <h3>W-Net：一种边界增强型卒中病变分割网络</h3>
-                    <h3><a
+                    <h4><a
                             href="https://doi.org/10.1016/j.eswa.2023.120637">https://doi.org/10.1016/j.eswa.2023.120637</a>
-                    </h3>
+                    </h4>
                     <div class="well">
                         <p>准确的病变分割是卒中治疗和预后的关键技术基础。由于医学图像中组织结构和成像模式的灰度特征相似，卒中病变分割受到复杂背景和噪声干扰的影响。
                         </p>
@@ -188,7 +279,7 @@
 
                 <hr>
 
-                <div id="7" class="section-block" style="padding-top: 60px; min-height: 500px;">
+                <div id="5" class="section-block" style="padding-top: 60px; min-height: 500px;">
                     <h3>基于改进注意力机制和上下文特征融合的脑卒中病灶分割扩散模型</h3>
                     <div class="well">
                         <p>MRI脑卒中病灶图像分割对于准确的临床诊断至关重要，但它面临着诸如脑卒中病灶和正常组织之间的低对比度、边界不清晰以及脑卒中患者之间的高变异性等挑战。
